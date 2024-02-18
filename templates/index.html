@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Compose</title>
+</head>
+<body style="margin-left: 25%; background-color:{{ color }};">
+    <h1>🧑‍💻 WELCOME TO UNIXCLOUDTRAINING! 🧑‍💻</h1>
+    <h2>A Docker Compose Application</h2>
+    <div class="click">
+        <p>👉🏽 Color changed: <b>{{ clicks }}</b> times.</p>
+        <p>👉🏽 Date: <b>{{ date_now }}</b></p>
+        <p>👉🏽 Server time: <b>{{ time_now }}</b></p>
+        <p>👉🏽 Server IP address: <b>{{ ip }}</b></p>
+    </div>
+    <div id="image" style="margin-top: 10px;">
+        <img src="https://media.licdn.com/dms/image/D4D12AQE00QHFpA2FYw/article-cover_image-shrink_600_2000/0/1663281022202?e=2147483647&v=beta&t=QkfhiFyaki5qyeL9I7v1HDf0f6-TFUzFq5NPDbwB4FM" alt="Image not found" width="700" height="400"> 
+    </div>
+    <div>
+        <p>👋 Click on the below button for a different background color 👇🏾:</p>
+        <form method="POST">
+            <b><input type="submit" value="Click"></b>
+        </form>
+    </div>
+</body>
+</html>

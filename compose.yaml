@@ -1,0 +1,19 @@
+services:
+  flash_web: # 1st service
+    build: # Similar to docker build -t <tag-here> .
+      context: . # Folder location of the Dockerfile
+      dockerfile: Dockerfile # Name of the Dockerfile from that location
+    ports:
+      - "8000:5000" # HOST-PORT:CONATINER-PORT
+    stop_signal: SIGINT # Graceful signal
+    volumes: # Maps data volume from container to current location for live update of the app
+      - .:/code
+      - /etc/localtime:/etc/localtime:ro #https://stackoverflow.com/questions/24551592/how-to-make-sure-dockers-time-syncs-with-that-of-the-host/51942316#51942316
+    environment: # Updates environment variables
+      FLASK_DEBUG: "true"
+    depends_on: # Creates dependency: flask_web should wait for redis to be ready
+      - redis
+  redis: # Second service
+    image: "redis:alpine"
+    ports:
+      - '6379:6379'

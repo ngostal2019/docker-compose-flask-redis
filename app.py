@@ -31,6 +31,6 @@ def web_app():
             ip = '127.0.0.1'
         finally:
             s.close()
-
-        renderTemplate = render_template('index.html',color=color,clicks=clicks,ip=ip,date_now=date_now,time_now=time_now)
+        renderTemplate = ''
+    renderTemplate = render_template('index.html',color=color,clicks=clicks,ip=ip,date_now=date_now,time_now=time_now)
     return renderTemplate
